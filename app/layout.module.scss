@@ -1,0 +1,40 @@
+.banner {
+  background-color: #757575;
+  border-radius: none;
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  nav {
+    background-color: #f0f0f0;
+    border-radius: none;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 30px;
+
+    // & div {
+    //   margin-right: auto;
+    //   display: flex;
+    //   gap: 6px;
+    // }
+
+    // fix this, want to float left while the rest is centered, nad be logo
+    & .mainSiteLink {
+      display: flex;
+      justify-content: flex-start;
+      align-self: flex-start;
+    }
+
+    & .ShoppingCart {
+      display: flex;
+      justify-content: flex-end;
+      align-self: flex-end;
+    }
+  }
+}
