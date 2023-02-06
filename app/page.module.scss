@@ -1,0 +1,22 @@
+.mainPagePic {
+  display: flex;
+  justify-content: center;
+  padding: 75px 0;
+}
+
+.mainButtons {
+  padding: 15px;
+  margin: 0px 60px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.individualButton {
+  background-color: #757575;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 10px;
+  text-decoration: none;
+}

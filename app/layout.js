@@ -46,7 +46,9 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         {children}
-        <footer>Made with hops and love! | Copyright Wappler Brewing</footer>
+        <footer className={styles.footer}>
+          Made with hops and love! | Copyright Wappler Brewing
+        </footer>
       </body>
     </html>
   );
