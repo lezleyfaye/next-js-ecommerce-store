@@ -6,6 +6,7 @@ export default function HomePage() {
   return (
     <main>
       <div className={styles.mainPagePic}>
+        {/* not optimized-fix image import, min 16 of next.js video 2/2 */}
         <img
           src="/mainPagePic.png"
           alt="Wappler Logo with collage"
