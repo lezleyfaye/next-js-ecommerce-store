@@ -17,7 +17,7 @@ export default function HomePage() {
       <div className={styles.mainButtons}>
         <div>
           <button className={styles.individualButton}>
-            <Link href="beer">Beer</Link>
+            <Link href="beers">Beer</Link>
           </button>
         </div>
         <div>
