@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
                 height={40}
               />
             </Link>
-            <Link href="beer">Beer</Link>
+            <Link href="beers">Beer</Link>
             <Link href="apparel">Apparel</Link>
             <Link href="other">Other Merch</Link>
             <Link className={styles.shoppingCart} href="checkout">

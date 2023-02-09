@@ -10,10 +10,15 @@ export default function BeersPage() {
         {beers.map((beer) => {
           return (
             <div key={beer.id}>
-              <Link href={`/beers/${beer.name}`}>
-                <h3>{beer.name}</h3>
+              <Link href={`/beers/${beer.name.toLowerCase()}`}>
+                <h2>{beer.name}</h2>
               </Link>
-              <Link href={`/beers/${beer.name}`}>
+              <div>
+                <h4>
+                  {beer.type} | {beer.size} | {beer.abv}
+                </h4>
+              </div>
+              <Link href={`/beers/${beer.name.toLowerCase()}`}>
                 <Image
                   src={`/bottles/${beer.name}-${beer.id}.jpg`}
                   alt={beer.name}
