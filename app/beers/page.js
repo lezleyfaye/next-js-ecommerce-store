@@ -8,8 +8,8 @@ export default function BeersPage() {
       <h1>Current beer selection</h1>
       {beers.map((beer) => {
         return (
-          // anchor tag required with data test id
-          <a data-test-id={`beers-${beer.id}`} key={beer.id}>
+          // anchor tag required with data test id, need to change to <a> but get hydration error?
+          <div data-test-id={`beers-${beer.id}`} key={beer.id}>
             <Link href={`/beers/${beer.name.toLowerCase()}`}>
               <h2>{beer.name}</h2>
             </Link>
@@ -27,7 +27,7 @@ export default function BeersPage() {
                 height="459"
               />
             </Link>
-          </a>
+          </div>
         );
       })}
     </div>

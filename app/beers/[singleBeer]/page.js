@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import { beers } from '../../../database/beers';
 
 export default function singleBeerPage(props) {
@@ -6,6 +7,11 @@ export default function singleBeerPage(props) {
     return beer.name.toLowerCase() === props.params.singleBeer;
   });
   console.log(singleBeer);
+
+  if (!singleBeer) {
+    throw new Error('not allowed');
+    notFound();
+  }
 
   return (
     <>
