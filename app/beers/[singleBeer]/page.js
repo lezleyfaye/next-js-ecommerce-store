@@ -14,9 +14,13 @@ export default function singleBeerPage(props) {
         <h4>
           {singleBeer.type} | {singleBeer.size} | {singleBeer.abv}
         </h4>
+        {/* product price required with data test id */}
+        <h5 data-test-id="product-price">{singleBeer.price} EUR</h5>
+        <p>{singleBeer.description}</p>
       </div>
       <main>
         <Image
+          data-test-id="product-image"
           src={`/bottles/${singleBeer.name}-${singleBeer.id}.jpg`}
           alt={singleBeer.name}
           width="258"

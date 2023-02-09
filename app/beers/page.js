@@ -4,32 +4,32 @@ import { beers } from '../../database/beers';
 
 export default function BeersPage() {
   return (
-    <>
-      <h1>beers page</h1>
-      <main>
-        {beers.map((beer) => {
-          return (
-            <div key={beer.id}>
-              <Link href={`/beers/${beer.name.toLowerCase()}`}>
-                <h2>{beer.name}</h2>
-              </Link>
-              <div>
-                <h4>
-                  {beer.type} | {beer.size} | {beer.abv}
-                </h4>
-              </div>
-              <Link href={`/beers/${beer.name.toLowerCase()}`}>
-                <Image
-                  src={`/bottles/${beer.name}-${beer.id}.jpg`}
-                  alt={beer.name}
-                  width="258"
-                  height="459"
-                />
-              </Link>
+    <div>
+      <h1>Current beer selection</h1>
+      {beers.map((beer) => {
+        return (
+          // anchor tag required with data test id
+          <a data-test-id={`beers-${beer.id}`} key={beer.id}>
+            <Link href={`/beers/${beer.name.toLowerCase()}`}>
+              <h2>{beer.name}</h2>
+            </Link>
+            <div>
+              <h4>
+                {beer.type} | {beer.size} | {beer.abv}
+              </h4>
+              <h5>{beer.price} EUR</h5>
             </div>
-          );
-        })}
-      </main>
-    </>
+            <Link href={`/beers/${beer.name.toLowerCase()}`}>
+              <Image
+                src={`/bottles/${beer.name}-${beer.id}.jpg`}
+                alt={beer.name}
+                width="258"
+                height="459"
+              />
+            </Link>
+          </a>
+        );
+      })}
+    </div>
   );
 }
