@@ -1,5 +1,6 @@
 import './global.scss';
 import Link from 'next/link';
+import CookieBanner from './CookieBanner';
 import styles from './layout.module.scss';
 
 export default function RootLayout({ children }) {
@@ -10,8 +11,8 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-
       <body>
+        <CookieBanner />
         <div className={styles.banner}>
           <Link href="https://wapplerbrewing.com" target="_blank">
             <img
