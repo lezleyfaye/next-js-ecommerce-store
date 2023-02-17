@@ -34,9 +34,8 @@ export default function RootLayout({ children }) {
               />
             </Link>
             <Link href="beers">Beer</Link>
-            <Link href="apparel">Apparel</Link>
             <Link href="other">Other Merch</Link>
-            <Link className={styles.shoppingCart} href="checkout">
+            <Link className={styles.shoppingCart} href="cart">
               <img
                 src="/shoppingCart.svg"
                 alt="shopping cart"
