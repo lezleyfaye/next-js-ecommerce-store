@@ -3,29 +3,28 @@ import { useEffect, useState } from 'react';
 import { getLocalStorage, setLocalStorage } from './utils/localStorage';
 
 export default function CookieBanner() {
-  const [areCookiesAccepted, setAreCookiesAccepted] = useState(false);
+  const [areCookiesTermsAccepted, setAreCookiesTermsAccepted] = useState(false);
 
   useEffect(() => {
-    const localStorageValue = getLocalStorage('areCookiesAccepted');
+    const localStorageValue = getLocalStorage('areCookiesTermsAccepted');
     const initialState =
       localStorageValue === undefined ? false : localStorageValue;
-
-    setAreCookiesAccepted(initialState);
+    setAreCookiesTermsAccepted(initialState);
   }, []);
 
-  return (
-    !areCookiesAccepted && (
-      <>
-        <div>cookie banner goes here</div>
-        <button
-          onClick={() => {
-            setAreCookiesAccepted(true);
-            setLocalStorage('areCookiesTermsAccepted', true);
-          }}
-        >
-          Accept
-        </button>
-      </>
-    )
+  return areCookiesTermsAccepted ? (
+    <div />
+  ) : (
+    <>
+      <div>Cookie Banner terms and conditions</div>
+      <button
+        onClick={() => {
+          setAreCookiesTermsAccepted(true);
+          setLocalStorage('areCookiesTermsAccepted', true);
+        }}
+      >
+        Accept
+      </button>
+    </>
   );
 }

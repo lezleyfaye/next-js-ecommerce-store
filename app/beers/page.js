@@ -1,13 +1,46 @@
+// this also on cart page
+import { cookies } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import { beers } from '../../database/beers';
 import styles from '../beers/page.module.scss';
 
+export const metadata = {
+  title: 'Current Beers - Wappler',
+  description: 'Wappler Webshop',
+};
+
 export default function BeersPage() {
+  // want this on cart page?
+  const beersCookie = cookies().get('beersCookie');
+
+  let beersCookieParsed = [];
+
+  if (beersCookie) {
+    beersCookieParsed = JSON.parse(beersCookie.value);
+  }
+  // console.log(beersCookieParsed);
+
+  const beersWithQuantity = beers.map((beer) => {
+    const beerWithQuantity = { ...beer, quantity: 0 };
+
+    const beerInCookie = beersCookieParsed.find(
+      (beerObject) => beer.id === beerObject.id,
+    );
+
+    if (beerInCookie) {
+      beerWithQuantity.quantity = beerInCookie.quantity;
+    }
+
+    return beerWithQuantity;
+  });
+
+  // console.log('beersWithQuantity', beersWithQuantity);
+  // ends here
   return (
     <div>
       <h1 className={styles.beerTitle}>Current beer selection</h1>
-      {beers.map((beer) => {
+      {beersWithQuantity.map((beer) => {
         return (
           // anchor tag required with data test id, need to change to <a> but get hydration error?
           <div
@@ -34,6 +67,8 @@ export default function BeersPage() {
                     {beer.type} | {beer.size} | {beer.abv}
                   </h4>
                   <h5>{beer.price} EUR</h5>
+                  {/* this line also on cart page? */}
+                  <p>Quantity: {beer.quantity} </p>
                 </div>
               </div>
             </div>

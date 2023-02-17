@@ -2,6 +2,11 @@ import './global.scss';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
+export const metadata = {
+  title: 'Wappler Brewing Webshop',
+  description: 'Wappler Webshop',
+};
+
 export default function HomePage() {
   return (
     <main>
@@ -14,15 +19,11 @@ export default function HomePage() {
           height={450}
         />
       </div>
-      <div className={styles.mainButtons}>
+      {/* these are the buttons that were below the pic */}
+      {/* <div className={styles.mainButtons}>
         <div>
           <button className={styles.individualButton}>
             <Link href="beers">Beer</Link>
-          </button>
-        </div>
-        <div>
-          <button className={styles.individualButton}>
-            <Link href="apparel">Apparel</Link>
           </button>
         </div>
         <div>
@@ -31,10 +32,7 @@ export default function HomePage() {
           </button>
         </div>
       </div>
-      {/* what I need here:
-    logo
-    photo collage
-    buttons to the other pages */}
+       */}
     </main>
   );
 }
