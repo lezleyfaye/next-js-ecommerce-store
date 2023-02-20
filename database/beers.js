@@ -1,6 +1,36 @@
-import fs from 'node:fs';
+// import fs from 'node:fs';
+import { cache } from 'react';
+// for database, coming from connect.ts
+import { sql } from './connect';
 
-export const beers = [
+// console logging the database data, should see in yarn dev hyper window
+// console.log(
+//   sql`
+//   SELECT * FROM beers
+//   `.then((data) => console.log(data)),
+// );
+
+// for database, want to use SELECT in a way so we can use it in other files
+// sql always needs await, await always needs async function
+// get all beers
+export const getBeers = cache(async () => {
+  const beers = await sql`
+  SELECT * FROM beers
+`;
+  return beers;
+});
+
+// get a single beer
+
+export const getBeer = cache(async (id) => {
+  const beers = await sql`
+  SELECT * FROM beers
+  WHERE id = ${id}
+`;
+  return beers[0];
+});
+
+export const beers1 = [
   {
     id: 1,
     name: 'Buntspecht',

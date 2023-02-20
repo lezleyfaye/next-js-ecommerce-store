@@ -26,9 +26,7 @@
 
     // fix this, want to float left while the rest is centered, nad be logo
     & .mainSiteLink {
-      display: flex;
-      justify-content: flex-start;
-      align-self: flex-start;
+      text-decoration: none;
     }
 
     // & .shoppingCart {

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { beers } from '../../../database/beers';
+import { getBeer } from '../../../database/beers';
 import Beer from './Beer';
 
 export const metadata = {
@@ -7,10 +7,13 @@ export const metadata = {
   description: 'Wappler Webshop',
 };
 
-export default function BeerPage({ params }) {
-  const singleBeer = beers.find((beer) => {
-    return beer.name.toLowerCase() === params.singleBeer;
-  });
+export default async function BeerPage({ params }) {
+  // const singleBeer = beers.find((beer) => {
+  //   return beer.name.toLowerCase() === params.singleBeer;
+  // });
+
+  const singleBeer = await getBeer(params.beerId);
+
   // console.log(singleBeer);
 
   if (!singleBeer) {

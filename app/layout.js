@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         </div>
         <header className={styles.header}>
           <nav>
-            <Link className={styles.mainSiteLink} href="/">
+            <Link href="/">
               <img
                 src="/newWapplerRectangular.svg"
                 alt="Wappler Name with Logo"
@@ -33,8 +33,12 @@ export default function RootLayout({ children }) {
                 height={40}
               />
             </Link>
-            <Link href="beers">Beer</Link>
-            <Link href="other">Other Merch</Link>
+            <Link className={styles.mainSiteLink} href="beers">
+              Beer
+            </Link>
+            <Link className={styles.mainSiteLink} href="other">
+              Other Merch
+            </Link>
             <Link className={styles.shoppingCart} href="cart">
               <img
                 src="/shoppingCart.svg"

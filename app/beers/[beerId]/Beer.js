@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 
+// import styles from './page.module.scss';
+
 export const metadata = {
   title: 'Current Beers - Wappler',
   description: 'Wappler Webshop',
@@ -12,7 +14,8 @@ export const metadata = {
 
 export default function singleBeer(props) {
   return (
-    <>
+    // put in this div when ready className={styles.singleBeer}
+    <div>
       <h1>{props.beer.name}</h1>
       <div>
         <h4>
@@ -107,6 +110,6 @@ export default function singleBeer(props) {
           </Link>
         </button>
       </div>
-    </>
+    </div>
   );
 }

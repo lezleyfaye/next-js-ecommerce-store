@@ -1,5 +1,6 @@
-// import { cookies } from 'next/headers';
+import Link from 'next/link';
 
+// import { cookies } from 'next/headers';
 // import { CookieValue } from '../../utils/cookies';
 // import { getParsedCookie, setStringifiedCookie } from '../../utils/cookies';
 
@@ -26,6 +27,9 @@ export default function cartPage() {
   return (
     <div>
       <h1>cart page</h1>
+      <button>
+        <Link href="checkout">Go to checkout</Link>
+      </button>
       {/* <p>Quantity: {beer.quantity} </p> */}
     </div>
   );
