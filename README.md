@@ -8,7 +8,7 @@ An e-commerce store for Wappler Brewing, built from scratch. The store showcases
 
 ## Usage
 
-Users can add products to their cart, enter their details, and checkout.
+Users can view products, add products to their cart, enter their details, and checkout.
 
 ## Tools Used
 
